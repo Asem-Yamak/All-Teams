@@ -1,0 +1,72 @@
+# Development environment override
+services:
+  php:
+    build:
+      context: .
+      target: frankenphp_dev
+    #volumes:
+      #- ./:/app
+      #- ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
+      #- ./frankenphp/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
+      # If you develop on Mac or Windows you can remove the vendor/ directory
+      #  from the bind-mount for better performance by enabling the next line:
+      #- /app/vendor
+    networks:
+      - mynetwork
+    depends_on:
+      - postgres
+    environment:
+      MERCURE_EXTRA_DIRECTIVES: demo
+      # See https://xdebug.org/docs/all_settings#mode
+      XDEBUG_MODE: "${XDEBUG_MODE:-on}" #off
+    extra_hosts:
+      # Ensure that host.docker.internal is correctly defined on Linux
+      - host.docker.internal:host-gateway
+    tty: true
+
+
+
+###> symfony/mercure-bundle ###
+###< symfony/mercure-bundle ###
+
+#Asem Yamak
+  postgres:
+    container_name: postgresql
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: hr
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - 5432:5432
+    # volumes:
+    #   - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+
+  pgadmin:
+    container_name: pgAdmin
+    image: elestio/pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ayamak@mtit.gov.ps
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - mynetwork
+
+
+
+volumes:
+  # postgres_data:
+  pgadmin_data:
+
+
+networks:
+  mynetwork:
+    driver: bridge
