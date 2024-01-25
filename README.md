@@ -2,8 +2,8 @@
 Run following commands for the first time:
 ####################################################
 
-docker-compose up -d
 docker-compose up -d --build 
+docker-compose up -d
 
 composer install
 
