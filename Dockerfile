@@ -30,6 +30,7 @@ RUN set -eux; \
 		intl \
 		opcache \
 		zip \
+		xdebug \
 	;
 
 ###> recipes ###
@@ -53,7 +54,7 @@ CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile" ]
 # Dev FrankenPHP image
 FROM frankenphp_base AS frankenphp_dev
 
-ENV APP_ENV=dev XDEBUG_MODE=off
+ENV APP_ENV=dev XDEBUG_MODE=debug
 VOLUME /app/var/
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
@@ -65,10 +66,10 @@ RUN set -eux; \
 	  	pgsql \
 	  	sockets \
 	   	gd \
-		xdebug \
 	;
 
 COPY --link frankenphp/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
+COPY 90-xdebug.ini "${PHP_INI_DIR}/conf.d"
 
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
 

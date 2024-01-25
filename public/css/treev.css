@@ -1,0 +1,95 @@
+/* Updated CSS for Vertical Tree Structure */
+.tree {
+  display: block;
+  text-align: right; 
+  min-height: 100vh;
+ 
+}
+
+.ul-tree {
+  list-style: none; 
+  /* padding-right: 30px;  */
+  position: relative; 
+}
+
+.li {
+  margin-bottom: 15px; 
+  margin-top: 15px; 
+  position: relative; 
+}
+
+/* Lines between parent and child */
+.li::before {
+  content: '';
+  position: absolute;
+  border-right: 2.5px solid #198754; 
+  top: 10px;
+  right: -10px;
+  height: calc(100% + 20px);
+}
+
+
+
+
+
+
+
+.tree .li a {
+  /* border: 2px solid #198754; */
+  padding: .6em 2.75em;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #212529;
+  font-weight: bold;
+  font-size: small;
+  position: relative;
+  top: 0px;
+
+}
+
+.tree .li a:hover,
+.tree .li a:hover + .ul-tree .li a {
+  background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+  color: #0c0c0c;
+  cursor: pointer;
+}
+
+
+
+.tree .li a:hover + .ul-tree .li::after,
+.tree .li a:hover + .ul-tree .li::before,
+.tree .li a:hover + .ul-tree::before,
+.tree .li a:hover + .ul-tree .ul-tree::before {
+  border-color: #3fdee9;
+}
+
+.btn-tree {
+  background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+  background-size: 200% auto;
+  transition: .5s;
+}
+
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC  51%, #02AAB0  100%);
+  color: #fff;
+  
+
+}
+         
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.background-grid {
+  background-image: linear-gradient(#f8f9fa 0.5px, transparent 0.5px, transparent calc(100% - 0.5px), #f8f9fa calc(100% - 0.5px)), linear-gradient(90deg, #f8f9fa 0.5px, transparent 0.5px, transparent calc(100% - 0.5px), #f8f9fa calc(100% - 0.5px));
+  background-size: 3% 3%;
+  border: 0.5px solid #f8f9fa;
+  
+}
+

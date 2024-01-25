@@ -4,13 +4,13 @@ services:
     build:
       context: .
       target: frankenphp_dev
-    #volumes:
-      #- ./:/app
-      #- ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
-      #- ./frankenphp/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
+    volumes:
+      - ./:/app
+      - ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./frankenphp/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
       # If you develop on Mac or Windows you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
-      #- /app/vendor
+      - /app/vendor
     networks:
       - mynetwork
     depends_on:
@@ -18,7 +18,7 @@ services:
     environment:
       MERCURE_EXTRA_DIRECTIVES: demo
       # See https://xdebug.org/docs/all_settings#mode
-      XDEBUG_MODE: "${XDEBUG_MODE:-on}" #off
+      XDEBUG_MODE: "${XDEBUG_MODE:-debug}" #off
     extra_hosts:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
@@ -40,6 +40,8 @@ services:
       POSTGRES_PASSWORD: root
     ports:
       - 5432:5432
+    expose:
+      - 5432
     # volumes:
     #   - postgres_data:/var/lib/postgresql/data
     networks:
