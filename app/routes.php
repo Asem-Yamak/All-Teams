@@ -7,6 +7,8 @@ use Slim\App;
 
 use App\Application\Actions\AsemYamak\TestAction;
 use App\Application\Actions\Shorouq\TestActionShoq;
+use App\Application\Actions\LameesAbuZahid\TestActionL;
+
 use Psr\Http\Message\ResponseInterface as Response;
 
 
@@ -29,7 +31,7 @@ return function (App $app) {
 
 
     $app->get('/asemyamak/list', TestAction::class);
-
+    $app->get('/LameesAbuZahid/list', TestActionL::class);
 
     // $app->group('/asemyamak', function (Group $group) {
     // });
