@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use App\Application\Actions\Majd\Majd;
 use Slim\App;
 
 
@@ -11,7 +12,6 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 
 use App\Application\Actions\AsemYamak\TestAction;
-use App\Application\Actions\LameesAbuZahid\TestActionL;
 
 
 
@@ -24,7 +24,6 @@ return function (App $app) {
 
 
     $app->get('/asemyamak/list', TestAction::class);
-    $app->get('/LameesAbuZahid/list', TestActionL::class);
 
 
     // $app->group('/asemyamak', function (Group $group) {
