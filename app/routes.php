@@ -8,9 +8,6 @@ use App\Application\Actions\Amir\AmirAction;
 use App\Domain\BicBucStriim\AppConstants;
 use App\Application\Actions\AsemYamak\TestAction;
 use Psr\Http\Message\ResponseInterface as Response;
-
-
-
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
@@ -21,9 +18,7 @@ use App\Application\Actions\HalaTaher\HalaAction;
 
 use App\Application\Actions\Shorouq\TestActionShoq;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+
 
 
 
