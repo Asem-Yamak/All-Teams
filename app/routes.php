@@ -20,7 +20,7 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 use App\Application\Actions\Majd\test;
 
-
+  
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -35,7 +35,7 @@ return function (App $app) {
 
     // $app->group('/asemyamak', function (Group $group) {
     // });
-
+//
 };
 
 
