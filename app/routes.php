@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use App\Application\Actions\Majd\Majd;
 use Slim\App;
 
 
@@ -11,6 +12,7 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 
 use App\Application\Actions\AsemYamak\TestAction;
+use App\Application\Actions\Majd\test;
 
 
 
@@ -23,6 +25,7 @@ return function (App $app) {
 
 
     $app->get('/asemyamak/list', TestAction::class);
+    $app->get('/Majd/list', Majd::class);
 
 
     // $app->group('/asemyamak', function (Group $group) {
