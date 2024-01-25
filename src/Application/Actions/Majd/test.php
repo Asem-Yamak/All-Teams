@@ -1,23 +1,22 @@
 <?php
 declare(strict_types=1);
-namespace App\Application\Actions\AsemYamak;
+namespace App\Application\Actions\Majd;
 
 
 use Slim\Psr7\Response;
 use App\Application\Actions\Action;
 
-use App\Models\AsemYamak\TestModel;
+use App\Models\Majd\test;
 
-class TestAction extends Action {
+class Majd extends Action {
     protected function action(): Response
     {
-        $data = TestModel::all();
+        $data = test::all();
 
         return $this->view->render(
             $this->response,
-            'asem/test.twig',
+            'Majd/test.twig',
             ['all'=>$data['result']]
-            
         );
     }
 }

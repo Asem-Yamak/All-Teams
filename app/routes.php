@@ -1,16 +1,24 @@
 <?php
 
 declare(strict_types=1);
+use App\Application\Actions\Majd\Majd;
 use Slim\App;
 
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use App\Application\Actions\AsemYamak\HalaTaher;
+use App\Application\Actions\AsemYamak\TestAction;
+use App\Application\Actions\HalaTaher\HalaAction;
 
 
 
 use App\Application\Actions\AsemYamak\TestAction;
+use App\Application\Actions\Shorouq\TestActionShoq;
+use Psr\Http\Message\ResponseInterface as Response;
+
+
+
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 
 
@@ -26,6 +34,7 @@ return function (App $app) {
 
     $app->get('/asemyamak/list', TestAction::class);
 
+    $app->get('/HalaTaher/list', HalaAction::class);
 
     // $app->group('/asemyamak', function (Group $group) {
     // });
