@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use App\Application\Actions\Majd\Majd;
 use Slim\App;
 
 
@@ -24,7 +25,6 @@ return function (App $app) {
 
 
     $app->get('/asemyamak/list', TestAction::class);
-    $app->get('/Shorouq/list', TestActionShoq::class);
 
 
     // $app->group('/asemyamak', function (Group $group) {
