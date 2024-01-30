@@ -21,6 +21,8 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 use App\Application\Actions\AsemYamak\AddBookAction;
 
+use App\Application\Actions\AsemYamak\SaveBookAction;
+
 
 
 
@@ -57,6 +59,7 @@ return function (App $app) {
      $app->group('/asemyamak', function (Group $group) {
         $group->get('/list', TestAction::class);
         $group->get('/add', AddBookAction::class);
+        $group->post('/add', SaveBookAction::class);
      });
 
      $app->group('/amal', function (Group $group) {

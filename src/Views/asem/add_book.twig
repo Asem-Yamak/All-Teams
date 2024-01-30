@@ -1,1 +1,20 @@
-OK
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add New Book</h2>
+
+<form action="/asemyamak/add" method="POST">
+    {{ csrf.fields | raw }}
+  <input type="text" id="name" name="name">
+    </br>
+    </br>
+  <input type="text" id="description" name="description"><br><br>
+  
+  <input type="submit" value="save">
+
+</form>
+
+
+</body>
+</html>
