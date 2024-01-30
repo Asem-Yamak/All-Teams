@@ -18,14 +18,16 @@ use Psr\Http\Message\ResponseInterface as Response;
 use App\Application\Actions\AsemYamak\AddBookAction;
 
 use App\Application\Actions\LameesAbuZahid\TestActionL;
-
-
-
-
-
-
 use Psr\Http\Message\ServerRequestInterface as Request;
+
+
+
+
+
+
+use App\Application\Actions\LameesAbuZahid\AddBookActionL;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use App\Application\Actions\LameesAbuZahid\SaveBookActionL;
 
   
 
@@ -34,13 +36,13 @@ return function (App $app) {
         // CORS Pre-Flight OPTIONS Request Handler
         return $response;
     });
-
+    
 /**
  * 
  */
 
     
-    $app->get('/LameesAbuZahid/list', TestActionL::class);
+    
     $app->get('/inam/test', InamAction::class);
 
     $app->get('/amir/list', AmirAction::class);
@@ -54,6 +56,11 @@ return function (App $app) {
      $app->group('/asemyamak', function (Group $group) {
         $group->get('/list', TestAction::class);
         $group->get('/add', AddBookAction::class);
+     });
+     $app->group('/LameesAbuZahid', function (Group $group) {
+        $group->get('/list', TestActionL::class);
+        $group->get('/add', AddBookActionL::class);
+        $group->get('/add', SaveBookActionL::class);
      });
 
 };

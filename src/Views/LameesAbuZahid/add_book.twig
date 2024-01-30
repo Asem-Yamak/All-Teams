@@ -1,0 +1,12 @@
+<html>
+<body>
+<h2>Add Book</h2>
+<form action="/LameesAbuZahid/add" method="post">
+ {{csrf.fields | raw}}
+Name: <input type="text"  id="name" name="name"><br></br>
+Description: <input type="text" id="desc" name="Desc"><br></br>
+<input type="submit" value ="save">
+</form>
+
+</body>
+</html>
