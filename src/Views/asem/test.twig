@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title></title>
-</head>
-<body>
+{% extends "master.twig" %}
 
-<h1></h1>
+
+{% block main %}
+
+
  {% for item in all %}
     {{item.name}} ---- {{item.description}}
     <br>
 {% endfor %} 
 
-</body>
-</html>
+ {% endblock %} 
