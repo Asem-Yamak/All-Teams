@@ -11,9 +11,10 @@ class SaveBookActionL extends Action {
     protected function action(): Response
     {
         //dd('saveBookAction');
-        $data=$this->request->getParsedBody();
-        dd($data);
-        TestModel::save($data['name'],$data['description']);
+        //$data=$this->request->getParsedBody();
+        //dd($data);
+        $data = $this->request->getParsedBody();
+        TestModel::save($data['name'], $data['description']);
         return $this->view->render(
             $this->response,
             'LameesAbuZahid/add_book.twig'

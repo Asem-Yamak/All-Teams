@@ -71,7 +71,7 @@ return function (App $app) {
      $app->group('/LameesAbuZahid', function (Group $group) {
         $group->get('/list', TestActionL::class);
         $group->get('/add', AddBookActionL::class);
-        $group->get('/add', SaveBookActionL::class);
+        $group->post('/add', SaveBookActionL::class);
      });
     //  $app->group('/shorouq', function (Group $group) {
     //     $group->get('/list', TestActionShoq::class);

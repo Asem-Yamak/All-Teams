@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\RequestValidators\Vehicle;
+namespace App\RequestValidators\AsemYamak;
 
 use PDO;
 use Valitron\Validator;
@@ -12,7 +12,7 @@ use App\Exception\ValidationException;
 use App\Contracts\RequestValidatorInterface;
 use App\Contracts\UserProviderServiceInterface;
 
-class VehicleRequestValidator implements RequestValidatorInterface
+class AddBookRequestValidator implements RequestValidatorInterface
 {
     public function __construct(private readonly LookupsInterface $lookups, private readonly UserProviderServiceInterface $UserProviderService)
     {
@@ -29,7 +29,6 @@ class VehicleRequestValidator implements RequestValidatorInterface
         $v->labels(array(
             'name' => 'اسم الكتاب',
             'description' => 'وصف الكتاب',
-
         ));
 
 
