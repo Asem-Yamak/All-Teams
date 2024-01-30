@@ -43,6 +43,8 @@ return function (App $app) {
 
     $app->get('/HalaTaher/list', HalaAction::class);
 
+    $app->get('/shorouq/list', TestActionShoq::class);
+
     // $app->group('/asemyamak', function (Group $group) {
     // });
 
