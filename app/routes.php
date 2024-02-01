@@ -47,20 +47,9 @@ return function (App $app) {
  */
 
     
-    $app->get('/LameesAbuZahid/list', TestActionL::class);
+   
     $app->get('/inam/test', InamAction::class);
 
-    $app->group('/amir', function (Group $group) {
-        $group->get('/list', TestAction::class);
-        $group->get('/add', AddBook::class);
-        $group->post('/add', SaveAddBook::class);
-     });
-
-    $app->get('/Majd/list', Majd::class);
-
-    $app->get('/HalaTaher/list', HalaAction::class);
-
-    $app->get('/shorouq/list', TestActionShoq::class);
 
 
      $app->group('/LameesAbuZahid', function (Group $group) {
@@ -75,7 +64,7 @@ return function (App $app) {
         $group->Post('/add', SaveBookAction::class);
        
      });
-     $app->get('/inam/test', InamAction::class);
+
 
      $app->group('/amir', function (Group $group) {
          $group->get('/list', TestAction::class);
@@ -87,7 +76,6 @@ return function (App $app) {
  
      $app->get('/HalaTaher/list', HalaAction::class);
  
-     $app->get('/shorouq/list', TestActionShoq::class);
  
       $app->group('/asemyamak', function (Group $group) {
          $group->get('/list', TestAction::class);
