@@ -31,6 +31,9 @@ use App\Application\Actions\LameesAbuZahid\TestActionL;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
+use App\Application\Actions\amir\Users\AddUserActionAmir;
+use App\Application\Actions\amir\Users\ListUserActionAmir;
+use App\Application\Actions\amir\Users\SaveUserActionAmir;
 use App\Application\Actions\AsemYamak\Users\AddUserAction;
 use App\Application\Actions\LameesAbuZahid\AddBookActionL;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
@@ -75,6 +78,9 @@ return function (App $app) {
          $group->get('/list', TestAction::class);
          $group->get('/add', AddBook::class);
          $group->post('/add', SaveAddBook::class);
+         $group->get('/user/add', AddUserActionAmir::class);
+         $group->post('/user/add', SaveUserActionAmir::class);
+         $group->get('/user/list', ListUserActionAmir::class);
       });
  
      $app->get('/Majd/list', Majd::class);

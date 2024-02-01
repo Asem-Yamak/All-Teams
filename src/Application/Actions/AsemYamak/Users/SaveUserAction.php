@@ -16,7 +16,7 @@ class SaveUserAction extends Action {
         UserModel::save($data);
         return $this->view->render(
             $this->response,
-            'asem/users/add_user.twig'
+            'amir/users/add_user.twig'
         );
     }
 }
