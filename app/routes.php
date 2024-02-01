@@ -4,34 +4,25 @@ declare(strict_types=1);
 use Slim\App;
 use App\Application\Actions\Majd\Majd;
 use App\Application\Actions\Majd\test;
-
 use App\Application\Actions\Amir\AddBook;
-
 use App\Domain\BicBucStriim\AppConstants;
-
 use App\Application\Actions\amal\AddAction;
 use App\Application\Actions\Amir\AmirAction;
 use App\Application\Actions\Amir\SaveAddBook;
-
 use App\Application\Actions\AsemYamak\HalaTaher;
 use App\Application\Actions\AsemYamak\TestAction;
 use App\Application\Actions\HalaTaher\HalaAction;
-
-
 use App\Application\Actions\InamSataria\InamAction;
 use App\Application\Actions\Shorouq\TestActionShoq;
 use Psr\Http\Message\ResponseInterface as Response;
-
-
 use App\Application\Actions\AsemYamak\AddBookAction;
-
-
 use App\Application\Actions\AsemYamak\SaveBookAction;
+use App\Application\Actions\HalaTaher\AddHUserAction;
+use App\Application\Actions\HalaTaher\SaveHUserAction;
 use App\Application\Actions\LameesAbuZahid\TestActionL;
 use Psr\Http\Message\ServerRequestInterface as Request;
-
-
 use App\Application\Actions\AsemYamak\Users\AddUserAction;
+
 use App\Application\Actions\LameesAbuZahid\AddBookActionL;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 use App\Application\Actions\AsemYamak\Users\ListUserAction;
@@ -79,7 +70,18 @@ return function (App $app) {
  
      $app->get('/Majd/list', Majd::class);
  
-     $app->get('/HalaTaher/list', HalaAction::class);
+     $app->group('/HalaTaher', function (Group $group) {
+      $group->get('/list', HalaAction::class);
+      $group->get('/add', AddBookAction::class);
+      $group->post('/add', SaveBookAction::class);
+//      $group->get('/user/add', AddUserAction::class);
+      //$group->post('/user/add', SaveUserAction::class);
+      $group->get('/user/list', ListUserAction::class);
+      $group->get('/user/add', AddHUserAction::class);
+      $group->post('/user/add', SaveHUserAction::class);
+      //$group->get('/HUser/list', ListHUserAction::class);
+     });
+    
  
  
       $app->group('/asemyamak', function (Group $group) {
