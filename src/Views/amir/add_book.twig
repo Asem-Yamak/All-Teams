@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add New Book</h2>
+
+<form action="/amir/add" method="POST">
+  {{csrf.fields | raw}}
+  <label for="name">name:</label><br>
+  <input type="text" id="name" name="name">
+  <br>
+
+  <label for="description">description:</label><br>
+  <input type="text" id="description" name="description" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+{# <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p> #}
+
+</body>
+</html>
+
