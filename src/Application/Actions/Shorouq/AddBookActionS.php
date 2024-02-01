@@ -6,7 +6,7 @@ namespace App\Application\Actions\Shorouq;
 use Slim\Psr7\Response;
 use App\Application\Actions\Action;
 
-class AddBookAction extends Action {
+class AddBookActionS extends Action {
     protected function action(): Response
     {
 

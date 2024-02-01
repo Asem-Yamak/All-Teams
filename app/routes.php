@@ -18,18 +18,20 @@ use App\Application\Actions\HalaTaher\HalaAction;
 use App\Application\Actions\InamSataria\InamAction;
 //use App\Application\Actions\AsemYamak\AddBookAction;
 
-use App\Application\Actions\Shorouq\SaveBookAction;
+use App\Application\Actions\Shorouq\AddBookActionS;
 
 use App\Application\Actions\Shorouq\TestActionShoq;
+
 use Psr\Http\Message\ResponseInterface as Response;
 
+
+
+
+
+
 use App\Application\Actions\AsemYamak\AddBookAction;
-
-
-
-
-
-
+use App\Application\Actions\Shorouq\SaveBookActionS;
+use App\Application\Actions\AsemYamak\SaveBookAction;
 use App\Application\Actions\LameesAbuZahid\TestActionL;
 use App\Application\Actions\LameesAbuZahid\AddBookActionL;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
@@ -77,8 +79,8 @@ return function (App $app) {
   
     $app->group('/shorouq', function (Group $group) {
         $group->get('/list', TestActionShoq::class);
-        $group->get('/add', AddBookAction::class);
-        $group->post('/add', SaveBookAction::class);
+        $group->get('/add', AddBookActionS::class);
+        $group->post('/add', SaveBookActionS::class);
        
      });
    
