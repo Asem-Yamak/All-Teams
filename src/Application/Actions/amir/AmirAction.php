@@ -9,7 +9,6 @@ use App\Models\Amir\Model;
 
 use App\Application\Actions\Action;
 use App\Models\AsemYamak\TestModel;
-use App\Application\Actions\Amir\AmirAction;
 
 class AmirAction extends Action {
     protected function action(): Response
