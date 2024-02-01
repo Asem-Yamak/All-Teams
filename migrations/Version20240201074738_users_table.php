@@ -11,11 +11,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-<<<<<<<< HEAD:migrations/Version20240201074738_users_table.php
 final class Version20240201074738_users_table extends AbstractMigration
-========
-final class Version20230619070854_books_seeder extends AbstractMigration
->>>>>>>> 176bdb03a6c0c1c1b1d76ab248f9adc1798e2434:migrations/Version20230619070854_books_seeder.php
 {
     public function getDescription(): string
     {
