@@ -14,6 +14,7 @@ use App\Application\Actions\AsemYamak\TestAction;
 use App\Application\Actions\HalaTaher\HalaAction;
 use App\Application\Actions\InamSataria\InamAction;
 use App\Application\Actions\Shorouq\TestActionShoq;
+
 use Psr\Http\Message\ResponseInterface as Response;
 use App\Application\Actions\AsemYamak\AddBookAction;
 use App\Application\Actions\AsemYamak\SaveBookAction;
@@ -21,6 +22,14 @@ use App\Application\Actions\HalaTaher\AddHUserAction;
 use App\Application\Actions\HalaTaher\SaveHUserAction;
 use App\Application\Actions\LameesAbuZahid\TestActionL;
 use Psr\Http\Message\ServerRequestInterface as Request;
+<<<<<<< HEAD
+=======
+
+
+use App\Application\Actions\amir\Users\AddUserActionAmir;
+use App\Application\Actions\amir\Users\ListUserActionAmir;
+use App\Application\Actions\amir\Users\SaveUserActionAmir;
+>>>>>>> 787f4bb6ac308ae9978a55a00c4e0c9eab30f8aa
 use App\Application\Actions\AsemYamak\Users\AddUserAction;
 
 use App\Application\Actions\LameesAbuZahid\AddBookActionL;
@@ -60,12 +69,16 @@ return function (App $app) {
         $group->Post('/add', SaveBookAction::class);
        
      });
+   
 
 
      $app->group('/amir', function (Group $group) {
          $group->get('/list', TestAction::class);
          $group->get('/add', AddBook::class);
          $group->post('/add', SaveAddBook::class);
+         $group->get('/user/add', AddUserActionAmir::class);
+         $group->post('/user/add', SaveUserActionAmir::class);
+         $group->get('/user/list', ListUserActionAmir::class);
       });
  
      $app->get('/Majd/list', Majd::class);

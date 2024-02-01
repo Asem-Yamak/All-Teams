@@ -7,7 +7,7 @@ use Slim\Psr7\Response;
 use App\Application\Actions\Action;
 use App\Models\Shorouq\TestModel;
 
-class SaveBookAction extends Action {
+class SaveBookActionS extends Action {
     protected function action(): Response
     {
         $data = $this->request->getParsedBody();
