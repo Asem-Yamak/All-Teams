@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>اضافة مستخدم جديد</h2>
+
+<form action="/asemyamak/user/add" method="POST">
+    {{ csrf.fields | raw }}
+
+  <input type="text" id="name" name="name" value="{{old.name}}">
+
+    </br>
+  {{ errors.name | first }}
+    </br>
+    </br>
+  <input type="text" id="email" name="email" value="{{old.email}}"><br><br>
+ 
+    </br>
+  {{ errors.email | first }}
+    </br>
+    </br>
+  <input type="text" id="age" name="age" value="{{old.age}}"><br><br>
+ 
+    </br>
+  {{ errors.age | first }}
+    </br>
+    </br>
+  <input type="submit" value="save">
+
+</form>
+
+
+</body>
+</html>

@@ -12,7 +12,7 @@ use App\Exception\ValidationException;
 use App\Contracts\RequestValidatorInterface;
 use App\Contracts\UserProviderServiceInterface;
 
-class AddBookRequestValidator implements RequestValidatorInterface
+class AddUserRequestValidator implements RequestValidatorInterface
 {
     public function __construct(private readonly LookupsInterface $lookups, private readonly UserProviderServiceInterface $UserProviderService)
     {
@@ -23,12 +23,12 @@ class AddBookRequestValidator implements RequestValidatorInterface
         $v = new Validator($data);
         
 
-        $v->rule('required', ['name', 'description']);
-
+        $v->rule('required', ['name', 'email', 'age']);
+        $v->rule('email', 'email');
 
         $v->labels(array(
-            'name' => 'اسم الكتاب',
-            'description' => 'وصف الكتاب',
+            'name' => 'اسم المستخدم',
+            'age' => 'العمر',
         ));
 
 
