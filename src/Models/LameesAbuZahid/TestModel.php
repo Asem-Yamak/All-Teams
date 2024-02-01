@@ -1,5 +1,5 @@
 <?php
-namespace App\Models\Shorouq;
+namespace App\Models\LameesAbuZahid;
 
 use App\Models\Model;
 
@@ -10,8 +10,8 @@ class TestModel {
     }
     public static function  save(string $name,string $des) : array {
         $sql = "INSERT INTO public.books(name, description)
-        VALUES (?, ?)";
-return Model::query_set($sql,[$name, $des]);
+                    VALUES (?, ?)";
+        return Model::query_set($sql,[$name, $des]);
     }
-    
+
 }

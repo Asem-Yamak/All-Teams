@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Add New Book</h2>
+
+<form action="/LameesAbuZahid/add" method="POST">
+    {{ csrf.fields | raw }}
+  <input type="text" id="name" name="name" value="{{old.name}}">
+
+    </br>
+  {{ errors.name | first }}
+    </br>
+    </br>
+  <input type="text" id="description" name="description" value="{{old.description}}"><br><br>
+ 
+    </br>
+  {{ errors.description | first }}
+    </br>
+    </br>
+  <input type="submit" value="save">
+
+</form>
+
+
+</body>
+</html>
