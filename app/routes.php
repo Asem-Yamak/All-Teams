@@ -74,26 +74,14 @@ return function (App $app) {
         $group->get('/add', AddBookActionL::class);
         $group->post('/add', SaveBookActionL::class);
      });
-    //  $app->group('/shorouq', function (Group $group) {
-    //     $group->get('/list', TestActionShoq::class);
-    //     $group->get('/add', AddBookAction::class);
-    //  });
+
     $app->group('/shorouq', function (Group $group) {
         $group->get('/list', TestActionShoq::class);
         $group->get('/add', AddBookAction::class);
         $group->Post('/add', SaveBookAction::class);
        
      });
-    //  $app->group('/shorouq', function (Group $group) {
-    //     $group->get('/list', TestActionShoq::class);
-    //     $group->get('/add', AddBookAction::class);
-    //  });
-    $app->group('/shorouq', function (Group $group) {
-        $group->get('/list', TestActionShoq::class);
-        $group->get('/add', AddBookAction::class);
-        $group->Post('/add', SaveBookAction::class);
-       
-     });
+
 
 };
 
